@@ -1,4 +1,10 @@
-# Lapak Diamond — RSA Top-Up Hub
+# Lapak Diamond — RSA Top-Up Hub | Kriptografi — Kelompok 6
+
+| Anggota | NRP |
+| :--- | :---: |
+| Ahmad Rafi Fadhillah Dwiputra | 5027241068 |
+| Ananda Fitri Wibowo | 5027241057 |
+| Naruna Vicranthyo Putra | 5027241105 |
 
 Aplikasi web toko top-up game bertema kriptografi edukatif dengan implementasi manual algoritma RSA (zero-dependency).
 
