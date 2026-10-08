@@ -1,0 +1,190 @@
+/* Layout Toko & Katalog Top-Up */
+
+.store-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .store-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Seksi Alur Bernomor */
+.flow-section {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.flow-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.flow-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 800;
+  font-family: var(--font-head);
+  font-size: 16px;
+  border-radius: var(--radius);
+}
+
+.flow-title {
+  font-size: 16px;
+  color: var(--text);
+  font-family: var(--font-head);
+  letter-spacing: 0.03em;
+}
+
+/* Grid Pilihan Nominal */
+.denom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.denom-card {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 10px;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+  transition: all var(--dur) var(--ease);
+}
+
+.denom-card:hover {
+  border-color: var(--line-focus);
+  background-color: var(--surface-3);
+}
+
+.denom-card.is-selected {
+  border-color: var(--accent);
+  background-color: rgba(242, 169, 59, 0.08);
+}
+
+.denom-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.denom-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.denom-price {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pilihan Pembayaran */
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 500px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.payment-card.is-selected {
+  border-color: var(--accent);
+  background-color: rgba(242, 169, 59, 0.08);
+}
+
+/* Panel Ringkasan Lengket (Sticky Summary) */
+.order-summary-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: sticky;
+  top: 74px;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-family: var(--font-head);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.summary-row.total {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--accent);
+  border-top: 1px dashed var(--line);
+  padding-top: 14px;
+  margin-top: 14px;
+}
+
+.summary-label {
+  color: var(--muted);
+}
+
+.summary-value {
+  color: var(--text);
+  font-weight: 600;
+  text-align: right;
+}

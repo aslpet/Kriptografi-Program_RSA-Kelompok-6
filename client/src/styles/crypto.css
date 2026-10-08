@@ -1,0 +1,201 @@
+/* Tampilan Kriptografi, Hex, dan Struk */
+
+/* Hex Block */
+.hex-block {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text);
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.hex-text {
+  overflow-x: auto;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1;
+}
+
+/* Step List */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-card {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.step-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.step-time {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.step-details {
+  background-color: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  overflow-x: auto;
+}
+
+/* Visualisasi Segmentasi Padding EM Bar */
+.em-bar {
+  display: flex;
+  height: 24px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 24px;
+  margin: 10px 0;
+}
+
+.em-seg-header {
+  background-color: #2b3b55;
+  color: #92b6f0;
+  min-width: 44px;
+}
+
+.em-seg-ps {
+  background-color: #3f3523;
+  color: #f2a93b;
+  flex: 1;
+}
+
+.em-seg-sep {
+  background-color: #4a2828;
+  color: #f28b82;
+  min-width: 32px;
+}
+
+.em-seg-data {
+  background-color: #1f3d2f;
+  color: #81c995;
+  flex: 2;
+}
+
+/* Kertas Struk Transaksi (Receipt Paper) */
+.receipt-paper {
+  background-color: var(--surface);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.receipt-header {
+  text-align: center;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.receipt-title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.receipt-subtitle {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.receipt-body {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.receipt-row.total {
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  padding: 10px 0;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Panel Verifikasi Tanda Tangan */
+.verify-box {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.verify-hashes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+@media (max-width: 600px) {
+  .verify-hashes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hash-card {
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.hash-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hash-value {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  word-break: break-all;
+  color: var(--text);
+}

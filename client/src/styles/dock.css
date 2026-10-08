@@ -1,0 +1,399 @@
+/* Crypto Dock (DevTools Style Panel) */
+
+.crypto-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--surface);
+  border-top: 1px solid var(--line);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
+  transition: transform var(--dur) var(--ease);
+}
+
+.crypto-dock.is-collapsed {
+  transform: translateY(calc(100% - 38px));
+}
+
+.crypto-dock.is-dragging {
+  transition: none !important;
+  user-select: none !important;
+}
+
+/* Drag Resizer */
+.dock-resizer {
+  height: 9px;
+  width: 100%;
+  cursor: row-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-2);
+  border-top: 1px solid var(--line);
+  user-select: none;
+  touch-action: none;
+  transition: background-color var(--dur) var(--ease);
+  position: relative;
+  z-index: 10;
+}
+
+.dock-resizer:hover,
+.dock-resizer:active {
+  background-color: var(--surface-3);
+}
+
+.dock-resizer-handle {
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--muted);
+  opacity: 0.6;
+  transition: opacity var(--dur) var(--ease), width var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.dock-resizer:hover .dock-resizer-handle,
+.dock-resizer:active .dock-resizer-handle {
+  opacity: 1;
+  width: 72px;
+  background-color: var(--accent);
+}
+
+.dock-header {
+  height: 38px;
+  background-color: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  user-select: none;
+}
+
+.dock-tabs {
+  display: flex;
+  gap: 2px;
+  height: 100%;
+}
+
+.dock-tab {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 14px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.dock-tab:hover {
+  color: var(--text);
+}
+
+.dock-tab.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background-color: var(--surface);
+}
+
+.dock-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dock-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 14px 16px;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Network Inspector Layout */
+.net-summary-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.net-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.net-compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .net-compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.net-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+.net-pane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.code-view {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text);
+  margin: 0;
+  min-height: 140px;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* EM Padding Visualizer */
+.em-inspector-box {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.em-block-tabs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.em-block-btn {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.em-block-btn:hover {
+  color: var(--text);
+  border-color: var(--line-focus);
+}
+
+.em-block-btn.is-active {
+  background-color: rgba(242, 169, 59, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.em-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+}
+
+.em-breakdown-card {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+}
+
+.em-breakdown-card .title {
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.em-breakdown-card .val {
+  color: var(--text);
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Server Log Tab */
+.log-tab-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+}
+
+.log-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.log-filters {
+  display: flex;
+  gap: 4px;
+}
+
+.log-filter-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.log-filter-btn.is-active {
+  background: var(--surface-3);
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.log-terminal {
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  flex: 1;
+  min-height: 160px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px;
+}
+
+.log-row-item {
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.log-row-header {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 11px;
+}
+
+.log-time {
+  color: var(--muted);
+  flex-shrink: 0;
+  font-size: 10px;
+}
+
+.log-badge-src {
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 10px;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.log-badge-src.server {
+  background: rgba(242, 169, 59, 0.15);
+  color: var(--accent);
+}
+
+.log-badge-src.client {
+  background: rgba(129, 201, 149, 0.15);
+  color: var(--ok);
+}
+
+.log-badge-src.error {
+  background: rgba(242, 139, 130, 0.15);
+  color: var(--bad);
+}
+
+.log-title {
+  color: var(--text);
+  word-break: break-all;
+  flex-grow: 1;
+}
+
+.log-details-toggle {
+  font-size: 10px;
+  color: var(--accent);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 2px;
+  text-align: left;
+}
+
+.log-details-content {
+  margin-top: 4px;
+  padding: 6px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 10px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .crypto-dock:not(.is-collapsed) {
+    top: 50px;
+    height: calc(100vh - 50px) !important;
+  }
+  .dock-content {
+    height: calc(100% - 38px);
+  }
+}

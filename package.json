@@ -1,0 +1,24 @@
+{
+  "name": "topup-rsa",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "node server/src/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:deps": "node scripts/check-rsa-deps.js",
+    "reset-data": "node scripts/reset-data.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "supertest": "^7.0.0",
+    "vitest": "^3.0.7"
+  }
+}

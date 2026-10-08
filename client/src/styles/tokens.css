@@ -1,0 +1,23 @@
+:root {
+  --bg:        #101319;
+  --surface:   #181c25;
+  --surface-2: #1f2430;
+  --surface-3: #262c3b;
+  --line:      #2b3140;
+  --line-focus:#454f68;
+  --text:      #e6e8ee;
+  --muted:     #8a91a3;
+  --accent:    #f2a93b;   /* Satu-satunya warna aksen utama */
+  --accent-hover: #e09627;
+  --on-accent: #1a1305;
+  --ok:        #4fae7a;
+  --ok-bg:     rgba(79, 174, 122, 0.12);
+  --bad:       #e0524d;
+  --bad-bg:    rgba(224, 82, 77, 0.12);
+  --radius:    4px;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Barlow Semi Condensed", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+  --dur:       140ms;
+  --ease:      cubic-bezier(0.2, 0.6, 0.2, 1);
+}

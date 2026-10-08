@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+server/src/data/server-keys.json
+server/src/data/orders.json
+.DS_Store
+*.log
